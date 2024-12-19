@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css"> <!-- Підключення CSS -->
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 style="margin-left: 40px;">MY WEATHER</h1>
+            <div id="current-city">Rivne</div>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Baku, Azerbaijan" />
+                <button id="search-button">Search</button>
+            </div>
+        </header>
+        <nav>
+            <button class="tab active" data-tab="today" id="tab-today">Today</button>
+            <button class="tab" data-tab="forecast" id="tab-forecast">5-day forecast</button>
+        </nav>
+
+        <main class="main-block">
+            <!-- Поточний прогноз для Today -->
+            <div id="today-content" class="tab-content active">
+                <div class="current-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;" id="weather-header">CURRENT WEATHER</div>
+                        <div style="margin-right: 30px;" id="weather-date">30.06.2018</div>
+                    </div>
+                    <div style="width: 100%; height: 155px; display: inline-flex;">
+                        <div class="weather-block-main">
+                            <img id="weather-icon" style="width: 130px;" src="./images/sunny.png" alt="Sunny">
+                        </div>
+                        <div class="weather-block-main">
+                            <div style="font-size: 50px;" id="weather-temp">29°C</div>
+                            <div style="color: gray;" id="weather-feels-like">Real feel 30°C</div>
+                        </div>
+                        <div class="weather-block-main">
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 80px; text-align: left;">Sunrise :</div>
+                                <div id="weather-sunrise">7:04 AM</div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 80px; text-align: left;">Sunset :</div>
+                                <div id="weather-sunset">5:11 PM</div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 80px; text-align: left;">Duration :</div>
+                                <div id="weather-duration">10:07 hr</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hourly-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;">HOURLY</div>
+                    </div>
+                    <!-- Заголовок таблиці -->
+                    <div class="hourly-table-header">
+                        <div class="hour-cell">Time</div>
+                        <div style="width: 50px;"></div>
+                        <div class="hour-cell">Forecast</div>
+                        <div class="hour-cell">Temp (°C)</div>
+                        <div class="hour-cell">RealFeel</div>
+                        <div class="hour-cell">Wind</div>
+                    </div>
+                    <!-- Рядки з даними -->
+                    <div class="hourly-details">
+                        <div class="hour-row">
+                            <div class="hour-cell">7pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Sunny</div>
+                            <div class="hour-cell">29°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">11 ESE</div>
+                        </div>
+                        <div class="hour-row">
+                            <div class="hour-cell">8pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Sunny</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">27°</div>
+                            <div class="hour-cell">9 ESE</div>
+                        </div>
+                        <div class="hour-row">
+                            <div class="hour-cell">9pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Clear</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">6 SE</div>
+                        </div>
+                        <div class="hour-row">
+                            <div class="hour-cell">9pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Clear</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">6 SE</div>
+                        </div>
+                        <div class="hour-row">
+                            <div class="hour-cell">9pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Clear</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">6 SE</div>
+                        </div>
+                        <div class="hour-row">
+                            <div class="hour-cell">9pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Clear</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">6 SE</div>
+                        </div>
+                        <!-- Інші години -->
+                    </div>
+                </div>
+
+                <div class="nearby-places">
+                    <h3 class="weather-block-header" style="margin-left: 30px;">NEARBY PLACES</h3>
+                    <div class="places-grid">
+                        <div class="place">
+                            <span class="place-name">Baladzhary</span>
+                            <img src="./images/sunny.png" alt="Sunny" class="weather-hourly-img">
+                            <span class="temperature">36°C</span>
+                        </div>
+                        <div class="place">
+                            <span class="place-name">Bailov</span>
+                            <img src="./images/sunny.png" alt="Sunny" class="weather-hourly-img">
+                            <span class="temperature">29°C</span>
+                        </div>
+                        <div class="place">
+                            <span class="place-name">Badamdar</span>
+                            <img src="./images/sunny.png" alt="Sunny" class="weather-hourly-img">
+                            <span class="temperature">36°C</span>
+                        </div>
+                        <div class="place">
+                            <span class="place-name">Cherni Gorod</span>
+                            <img src="./images/sunny.png" alt="Sunny" class="weather-hourly-img">
+                            <span class="temperature">29°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Прогноз на 5 днів -->
+            <div id="forecast-content" class="tab-content">
+                <div class="five-day-forecast">
+                    <div class="forecast-item">
+                        <p class="forecast-date">TONIGHT<br>JUN 30</p>
+                        <img src="./images/sunny.png" alt="moon icon" class="forecast-icon">
+                        <p class="forecast-temp">25°C</p>
+                        <p class="forecast-desc">Clear, Warm</p>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="forecast-date">SUN<br>JUL 01</p>
+                        <img src="./images/sunny.png" alt="sun icon" class="forecast-icon">
+                        <p class="forecast-temp">40°C</p>
+                        <p class="forecast-desc">Clear, Warm</p>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="forecast-date">MON<br>JUL 02</p>
+                        <img src="./images/sunny.png" alt="sun icon" class="forecast-icon">
+                        <p class="forecast-temp">35°C</p>
+                        <p class="forecast-desc">Clear, Warm</p>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="forecast-date">TUE<br>JUL 03</p>
+                        <img src="./images/sunny.png" alt="sun icon" class="forecast-icon">
+                        <p class="forecast-temp">38°C</p>
+                        <p class="forecast-desc">Clear, Warm</p>
+                    </div>
+                    <div class="forecast-item">
+                        <p class="forecast-date">WED<br>JUL 04</p>
+                        <img src="./images/sunny.png" alt="sun icon" class="forecast-icon">
+                        <p class="forecast-temp">36°C</p>
+                        <p class="forecast-desc">Clear, Warm</p>
+                    </div>
+                </div>
+                <!-- Додаткові блоки для hourly-details тут -->
+
+                <div class="hourly-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;">HOURLY</div>
+                    </div>
+                    <!-- Заголовок таблиці -->
+                    <div class="hourly-table-header">
+                        <div class="hour-cell">Time</div>
+                        <div style="width: 50px;"></div>
+                        <div class="hour-cell">Forecast</div>
+                        <div class="hour-cell">Temp (°C)</div>
+                        <div class="hour-cell">RealFeel</div>
+                        <div class="hour-cell">Wind</div>
+                    </div>
+                    <!-- Рядки з даними -->
+                    <div class="hourly-details">
+                        <div class="hour-row">
+                            <div class="hour-cell">7pm</div>
+                            <img class="weather-hourly-img" src="./images/sunny.png" alt="Clear">
+                            <div class="hour-cell">Sunny</div>
+                            <div class="hour-cell">29°</div>
+                            <div class="hour-cell">28°</div>
+                            <div class="hour-cell">11 ESE</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+
+        </main>
+    </div>
+
+    <script src="script.js"></script> <!-- Підключення JS -->
+</body>
+</html>
