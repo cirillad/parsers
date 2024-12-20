@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/sunny.png">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+
+        <header>
+            <h1 style="margin-left: 40px;">MY WEATHER</h1>
+            <div id="current-city" style="font-size: 25px;">Rivne</div>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter your city" />
+                <button id="search-button">Search</button>
+            </div>
+        </header>
+
+        <nav>
+            <button class="tab active" data-tab="today" id="tab-today">Today</button>
+            <button class="tab" data-tab="forecast" id="tab-forecast">5-day forecast</button>
+        </nav>
+
+        <main class="main-block">
+            <div id="today-content" class="tab-content active">
+                <div class="current-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;" id="weather-header">CURRENT WEATHER</div>
+                        <div style="margin-right: 30px;" id="weather-date">30.06.2018</div>
+                    </div>
+
+                    <div style="width: 100%; height: 155px; display: inline-flex;">
+                        <div class="weather-block-main">
+                            <img id="weather-icon" style="width: 130px;" src="./images/sunny.png" alt="Sunny">
+                        </div>
+
+                        <div class="weather-block-main">
+                            <div style="font-size: 50px;" id="weather-temp">29°C</div>
+                            <div style="color: gray;" id="weather-feels-like">Real feel 30°C</div>
+                        </div>
+
+                        <div class="weather-block-main">
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 80px; text-align: left;">Sunrise :</div>
+                                <div id="weather-sunrise">7:04 AM</div>
+                            </div>
+
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 80px; text-align: left;">Sunset :</div>
+                                <div id="weather-sunset">5:11 PM</div>
+                            </div>
+
+                            <div style="display: flex; flex-direction: row; margin: 7px;">
+                                <div style="min-width: 90px; text-align: left;">Duration :</div>
+                                <div id="weather-duration">10:07 hr</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hourly-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;">HOURLY</div>
+                    </div>
+
+                    <div class="hourly-table-header"></div>
+                    <div class="hourly-details"></div>
+                </div>
+
+                <div class="nearby-places">
+                    <h3 class="weather-block-header" style="margin-left: 30px;">NEARBY PLACES</h3>
+                    <div class="places-grid"></div>
+                </div>
+            </div>
+
+            <div id="forecast-content" class="tab-content">
+                <div class="five-day-forecast"></div>
+
+                <div class="hourly-weather">
+                    <div class="weather-block-header">
+                        <div style="margin-left: 30px;">HOURLY</div>
+                    </div>
+
+                    <div class="hourly-table-header">
+                        <div class="hour-cell">Time</div>
+                        <div style="width: 50px;"></div>
+                        <div class="hour-cell">Forecast</div>
+                        <div class="hour-cell">Temp (°C)</div>
+                        <div class="hour-cell">RealFeel</div>
+                        <div class="hour-cell">Wind</div>
+                    </div>
+
+                    <div class="weather-hourly-details"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
